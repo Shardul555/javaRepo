@@ -7,37 +7,27 @@ import java.util.Scanner;
 import main.java.com.MagicalArena.app.data.PlayerInformation;
 
 public class ProcessInputService {
-  List<PlayerInformation> playerInformationList;
 
   public ProcessInputService() {
-    playerInformationList = new ArrayList<>();
-    for (int i = 0; i < 2; i++) {
-      playerInformationList.add(new PlayerInformation());
-    }
   }
 
-  public void processInputString() {
+  public void processInputString(List <PlayerInformation> playerInformationList) {
     String inputName;
     int input = 0;
     Scanner scn = new Scanner(System.in);
     while (input < 2) {
-      boolean validInput = false;
-      while (!validInput) {
-        System.out.println("Please enter name of player " + (input + 1) + " :");
-        inputName = scn.nextLine();
-        if (inputName.isEmpty()) {
-          System.out.println("Error: Please enter a non-empty name, Try Again");
-          scn.next();
-        } else {
-          playerInformationList.get(input).setName(inputName);
-          input++;
-          validInput = true;
-        }
+      System.out.println("Please enter name of player " + (input + 1) + " :");
+      inputName = scn.nextLine();
+      if (inputName.isEmpty()) {
+        System.out.println("Error: Please enter a non-empty name, Try Again");
+      } else {
+        playerInformationList.get(input).setName(inputName);
+        input++;
       }
     }
   }
 
-  public void processInputIntegers() {
+  public void processInputIntegers(List <PlayerInformation> playerInformationList) {
     Scanner scn = new Scanner(System.in);
     System.out.println("Enter health of first player: ");
     playerInformationList.get(0).setHealth(scn.nextInt());
