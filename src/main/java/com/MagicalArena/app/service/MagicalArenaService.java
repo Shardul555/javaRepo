@@ -2,8 +2,6 @@ package com.MagicalArena.app.service;
 
 import static java.lang.Math.min;
 
-import java.io.LineNumberInputStream;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -22,8 +20,8 @@ public class MagicalArenaService {
   private String playGame(PlayerInformation attacker, PlayerInformation defender) {
     Random rand = new Random();
     while (attacker.getHealth() > 0 && defender.getHealth() > 0) {
-      int attackDice = rand.nextInt(1, 7);
-      int defendDice = rand.nextInt(1, 7);
+      int attackDice = rand.nextInt(6)+1;
+      int defendDice = rand.nextInt(6)+1;
       int finalHealth = defender.getHealth() + min(0, defendDice * defender.getStrength() - attackDice * attacker.getAttack()); //take minimum with 0 as health cannot be increased in this operation
       defender.setHealth(finalHealth);
       PlayerInformation nextDefender = attacker;

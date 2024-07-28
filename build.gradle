@@ -1,9 +1,20 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 repositories {
     mavenCentral()
+}
+
+sourceSets.main.java.srcDirs = ['src/main/java']
+sourceSets.test.java.srcDirs = ['src/test/java']
+
+group = 'com.MagicalArena.app'
+
+java {
+    sourceCompatibility = '17.0.10'
+    targetCompatibility = '17.0.10'
 }
 
 dependencies {
@@ -14,3 +25,9 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+application {
+    mainClassName = 'com.MagicalArena.app.MagicalArenaGame'
+}
+
+

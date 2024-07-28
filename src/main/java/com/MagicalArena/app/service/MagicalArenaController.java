@@ -2,6 +2,7 @@ package com.MagicalArena.app.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import com.MagicalArena.app.data.PlayerInformation;
 
@@ -24,5 +25,4 @@ public class MagicalArenaController {
     processInputService.processInputIntegers(playerInformationList);
     return magicalArenaService.simulateGame(playerInformationList);
   }
-
 }
