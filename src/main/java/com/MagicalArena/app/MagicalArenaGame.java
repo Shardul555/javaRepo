@@ -1,10 +1,10 @@
 package com.MagicalArena.app;
 
-import com.MagicalArena.app.service.MagicalArenaService;
+import com.MagicalArena.app.service.MagicalArenaController;
 
 public class MagicalArenaGame {
   public static void main(String[] args) {
-    MagicalArenaService magicalArenaService = new MagicalArenaService();
-    magicalArenaService.processGameInputs();
+    MagicalArenaController magicalArenaController = new MagicalArenaController();
+    magicalArenaController.processGameInputs();
   }
 }

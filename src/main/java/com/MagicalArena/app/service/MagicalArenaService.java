@@ -2,34 +2,25 @@ package com.MagicalArena.app.service;
 
 import static java.lang.Math.min;
 
-import java.util.ArrayList;
+import java.io.LineNumberInputStream;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 import com.MagicalArena.app.data.PlayerInformation;
 
-
 public class MagicalArenaService {
-  List<PlayerInformation> playerInformationList;
-  public MagicalArenaService() {
-    playerInformationList = new ArrayList<>();
-    for (int i = 0; i < 2; i++) {
-      playerInformationList.add(new PlayerInformation());
-    }
-  }
-  public void processGameInputs() {
-    ProcessInputService processInputService = new ProcessInputService();
-    processInputService.processInputString(playerInformationList);
-    processInputService.processInputIntegers(playerInformationList);
-    playGame();
+  public MagicalArenaService () {
   }
 
-  private void playGame() {
+  public String simulateGame(List<PlayerInformation> playerInformationList) {
+    List<PlayerInformation> playersList = getAttackerAndDefender(playerInformationList);
+    return playGame(playersList.get(0), playersList.get(1));
+  }
+
+  private String playGame(PlayerInformation attacker, PlayerInformation defender) {
     Random rand = new Random();
-    List<PlayerInformation> playersList = getAttackerAndDefender();
-    PlayerInformation attacker = playersList.get(0);
-    PlayerInformation defender = playersList.get(1);
     while (attacker.getHealth() > 0 && defender.getHealth() > 0) {
       int attackDice = rand.nextInt(1, 7);
       int defendDice = rand.nextInt(1, 7);
@@ -39,16 +30,13 @@ public class MagicalArenaService {
       attacker = defender;
       defender = nextDefender;
     }
-    if (attacker.getHealth() <= 0) {
-      DisplayManager.displayResults(defender.getName());
-    } else {
-      DisplayManager.displayResults(attacker.getName());
-    }
+    DisplayManager.displayResults(defender.getName());
+    return defender.getName();
   }
 
-  private List<PlayerInformation> getAttackerAndDefender() {
-    int attackIndex = -1;  //index of attacking player
-    int defendIndex = -1; //index of defending player
+  private List<PlayerInformation> getAttackerAndDefender(List<PlayerInformation> playerInformationList) {
+    int attackIndex;  //index of attacking player
+    int defendIndex; //index of defending player
     Random rand = new Random();
     if (playerInformationList.get(0).getHealth() < playerInformationList.get(1).getHealth()) {
       attackIndex = 0;
@@ -68,5 +56,4 @@ public class MagicalArenaService {
     }
     return Arrays.asList(playerInformationList.get(attackIndex), playerInformationList.get(defendIndex));
   }
-
 }
