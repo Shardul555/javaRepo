@@ -1,4 +1,4 @@
-package main.java.com.MagicalArena.app.data;
+package com.MagicalArena.app.data;
 
 public class PlayerInformation {
   private String name;

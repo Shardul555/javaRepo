@@ -1,4 +1,4 @@
-package main.java.com.MagicalArena.app.service;
+package com.MagicalArena.app.service;
 
 import static java.lang.Math.min;
 
@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import main.java.com.MagicalArena.app.data.PlayerInformation;
+import com.MagicalArena.app.data.PlayerInformation;
+
 
 public class MagicalArenaService {
   List<PlayerInformation> playerInformationList;
@@ -65,5 +66,4 @@ public class MagicalArenaService {
       System.out.println(playerInformationList.get(startPos).getName() + " has won the game");
     }
   }
-
 }

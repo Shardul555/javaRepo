@@ -1,10 +1,11 @@
-package main.java.com.MagicalArena.app.service;
+package com.MagicalArena.app.service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import main.java.com.MagicalArena.app.data.PlayerInformation;
+import com.MagicalArena.app.data.PlayerInformation;
+
 
 public class ProcessInputService {
 

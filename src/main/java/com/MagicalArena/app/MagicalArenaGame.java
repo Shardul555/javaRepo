@@ -1,6 +1,6 @@
-package main.java.com.MagicalArena.app;
+package com.MagicalArena.app;
 
-import main.java.com.MagicalArena.app.service.MagicalArenaService;
+import com.MagicalArena.app.service.MagicalArenaService;
 
 public class MagicalArenaGame {
   public static void main(String[] args) {
