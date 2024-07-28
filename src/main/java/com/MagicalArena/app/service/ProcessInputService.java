@@ -41,6 +41,6 @@ public class ProcessInputService {
     System.out.println("Enter attack of first player: ");
     playerInformationList.get(0).setAttack(scn.nextInt());
     System.out.println("Enter attack of second player: ");
-    playerInformationList.get(0).setAttack(scn.nextInt());
+    playerInformationList.get(1).setAttack(scn.nextInt());
   }
 }
