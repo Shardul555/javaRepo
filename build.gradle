@@ -17,6 +17,10 @@ java {
     targetCompatibility = '17.0.10'
 }
 
+tasks.withType(JavaExec) {
+    standardInput = System.in
+}
+
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
     testImplementation 'org.mockito:mockito-core:5.12.0'

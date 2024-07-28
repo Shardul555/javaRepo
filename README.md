@@ -10,5 +10,4 @@
 
 * Instructions for Playing
     * Build the project with command: ./gradlew build
-    * Please run it with IntelliJ if possible, unable to debug by ./gradlew run is not working
-*Also commits are with username 223114492, which is my official email setup, I forgot to change, apologies for it.
+    * Please run it ./gradlew run OR directly with INTELLIJ
